@@ -1,0 +1,1 @@
+-- Create the Investment_company table

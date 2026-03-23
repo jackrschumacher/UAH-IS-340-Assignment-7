@@ -5,8 +5,18 @@ VALUES
 ('TCA', 'Tara Capital'),
 ('ALB', 'Albritton');
 
--- Load CEOFName and CEOLName
+-- Update CEOFName and CEOLName (since we need to update rows that have already been inserted)
+UPDATE Investment_company
+SET CEOFName = 'Mick', CEOLName = 'Dempsey'
+WHERE ICID = 'ACF'
 
+UPDATE Investment_company
+SET CEOFName = 'Ava', CEOLName = 'Newton'
+WHERE ICID = 'TCA'
+
+UPDATE Investment_company
+SET CEOFName = 'Lena', CEOLName = 'Dollar'
+WHERE ICID = 'ALB'
 
 -- Load data into the mutual funds table
 INSERT INTO Mututal_funds(MFIncDate, MFID, MFName, MFMix)

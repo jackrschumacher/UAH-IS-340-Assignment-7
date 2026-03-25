@@ -22,3 +22,9 @@ PRIMARY KEY(SecurityID));
 ALTER TABLE Investment_company 
 ADD CEOFName varchar(25),
 CEOLName varchar(25)
+
+CREATE TABLE Security_Manufacturing_Lookup(
+SecurityID char(2) NOT NULL,
+MFID char(2) NOT NULL,
+FOREIGN KEY (SecurityID) REFERENCES Securities(SecurityID),
+FOREIGN KEY (MFID) REFERENCES Mututal_funds(MFID));

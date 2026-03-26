@@ -10,6 +10,8 @@ MFID char(2) NOT NULL,
 MFIncDate DATE NOT NULL,
 MFName varchar(25) NOT NULL,
 MFMix varchar(50) NOT NULL,
+Investment_companyID char(3) NOT NULL,
+FOREIGN KEY(Investment_companyID) REFERENCES Investment_company(ICID),
 PRIMARY KEY(MFID));
 
 -- Create the Securities Table- Will alter table later after data loading to include CEOFName and CEOLName 
@@ -23,7 +25,7 @@ ALTER TABLE Investment_company
 ADD CEOFName varchar(25),
 CEOLName varchar(25)
 
-CREATE TABLE Security_Manufacturing_Lookup(
+CREATE TABLE Security_Mutual_Lookup(
 SecurityID char(2) NOT NULL,
 MFID char(2) NOT NULL,
 FOREIGN KEY (SecurityID) REFERENCES Securities(SecurityID),
